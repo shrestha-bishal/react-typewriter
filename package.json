@@ -1,0 +1,57 @@
+{
+  "name": "@bishal-shrestha/react-typewriter",
+  "version": "1.0.0",
+  "description": "A flexible and scalable React component for typing effect with multi-line support",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "typewriter",
+    "typing-effect"
+  ],
+  "author": {
+    "name": "Bishal Shrestha",
+    "url": "https://github.com/shrestha-bishal"
+  },
+  "homepage": "https://github.com/shrestha-bishal/react-typewriter/",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/shrestha-bishal"
+    },
+    {
+      "type": "buy-me-a-coffee",
+      "url": "https://www.buymeacoffee.com/shresthabishal"
+    },
+    {
+      "type": "other",
+      "url": "https://thanks.dev/gh/shrestha-bishal"
+    }
+  ], 
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "rollup": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "typescript": "^5.0.0"
+  }
+}
