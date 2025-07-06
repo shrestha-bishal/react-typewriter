@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 export interface ReactTypewriterProps {
   lines: string[];
@@ -31,8 +31,7 @@ export default function ReactTypewriter({
   onLineTyped,
   onLoopComplete,
 }: ReactTypewriterProps) {
-   console.log('ReactTypewriter rendered');
-
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [currentLine, setCurrentLine] = useState('');
   const [lineIndex, setLineIndex] = useState(0);
@@ -61,20 +60,35 @@ export default function ReactTypewriter({
 
   // Typing effect
   useEffect(() => {
-    if (pause) return;
+    if (pause) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      return;
+    }
     if (isErasing) return;
 
-    let timeout: ReturnType<typeof setTimeout>;
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
 
     if (lineIndex >= lines.length) {
-      timeout = setTimeout(() => setIsErasing(true), eraseDelay);
+      if (loop) {
+        timeoutRef.current = setTimeout(() => setIsErasing(true), eraseDelay);
+      } else {
+        setDisplayedLines(lines);
+        setCurrentLine('');
+        return;
+      }
     } else if (charIndex < lines[lineIndex].length) {
-      timeout = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setCurrentLine((prev) => prev + lines[lineIndex][charIndex]);
         setCharIndex((prev) => prev + 1);
       }, typingSpeed);
     } else {
-      timeout = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setDisplayedLines((prev) => [...prev, currentLine]);
         setCurrentLine('');
         setLineIndex((prev) => prev + 1);
@@ -82,7 +96,12 @@ export default function ReactTypewriter({
       }, lineDelay);
     }
 
-    return () => clearTimeout(timeout);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
   }, [
     charIndex,
     lineIndex,
@@ -93,15 +112,26 @@ export default function ReactTypewriter({
     lineDelay,
     eraseDelay,
     pause,
+    loop,
   ]);
 
   // Erasing effect
   useEffect(() => {
-    if (pause) return;
+    if (pause) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      return;
+    }
     if (!isErasing) return;
 
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+
     const currentEraseLine = displayedLines[eraseLineIndex] || '';
-    let timeout: ReturnType<typeof setTimeout>;
 
     if (eraseLineIndex < 0) {
       if (loop) {
@@ -118,7 +148,7 @@ export default function ReactTypewriter({
     }
 
     if (eraseCharIndex < currentEraseLine.length) {
-      timeout = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         const newLine = currentEraseLine.slice(
           0,
           currentEraseLine.length - eraseCharIndex - 1
@@ -131,13 +161,18 @@ export default function ReactTypewriter({
         setEraseCharIndex((prev) => prev + 1);
       }, eraseSpeed);
     } else {
-      timeout = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setEraseLineIndex((prev) => prev - 1);
         setEraseCharIndex(0);
       }, eraseSpeed);
     }
 
-    return () => clearTimeout(timeout);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
   }, [
     isErasing,
     eraseLineIndex,

@@ -1,10 +1,12 @@
+/* Root and general layout */
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
+/* Logo styling */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -26,17 +28,107 @@
     transform: rotate(360deg);
   }
 }
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-.card {
-  padding: 2em;
+/* Reset & base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+pre {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  margin-bottom: 1rem;
+  color: #58a6ff;
 }
 
-.read-the-docs {
-  color: #888;
+/* Main showcase block */
+.main-showcase {
+  background: #161b22;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 3rem;
+}
+
+/* Two-column grid for demo sections except main showcase */
+.demo-section:not(.main-showcase) {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
+  gap: 2rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.demo-section:not(.main-showcase) h2 {
+  width: 100%;
+}
+
+
+.variants-grid {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual variant blocks */
+.variant {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1.5rem;
+  min-height: 180px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  transition: background-color 0.3s ease;
+}
+.variant:hover {
+  background-color: #161b22;
+}
+
+.variant h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #d2dbe5;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+footer code {
+  background: #222;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
 }
