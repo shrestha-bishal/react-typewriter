@@ -90,6 +90,14 @@ function App() {
     ['And here is the third.']
   ], [])
 
+  const terminalLines = useMemo(() => [
+    'user@host:~$ echo "ReactTypewriter rocks!"',
+    'ReactTypewriter rocks!',
+  ], []);
+
+  const liveInputLine = useMemo(() => [input], [input]);
+  const clockLine = useMemo(() => [`Current Time: ${time}`], [time]);
+  
   useEffect(() => {
     const id = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000)
     return () => clearInterval(id)
@@ -241,6 +249,18 @@ function App() {
             </div>
           </section>
 
+          <section className="variant -sm">
+            <div>
+              <h3>Live input typing</h3>
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="type-input"
+              />
+            </div>
+            <ReactTypewriter lines={liveInputLine} typingSpeed={60} />
+          </section> 
+
           <section className="variant -md">
             <div>
               <h3>Multilingual typing</h3>
@@ -255,16 +275,12 @@ function App() {
             </div>
           </section>
 
-          <section
-            className="variant -md"
+          <section className="variant -md"
             style={{ background: '#000', padding: '1rem', borderRadius: '8px' }}>
             <div>
               <h3 style={{ color: '#0f0' }}>Terminal-style animation</h3>
               <ReactTypewriter
-                lines={[
-                  'user@host:~$ echo "ReactTypewriter rocks!"',
-                  'ReactTypewriter rocks!',
-                ]}
+                lines={terminalLines}
                 typingSpeed={40}
                 eraseSpeed={10}
                 lineDelay={800}
@@ -310,7 +326,7 @@ function App() {
             </button>
           </section> 
 
-          <section className="variant -md">
+          <section className="variant -lg">
             <div>
               <h3>Performance & Behavior</h3>
               <p>
@@ -333,7 +349,7 @@ function App() {
             </button>
           </section>  
 
-          <section className="variant">
+          <section className="variant -lg">
             <div>
               <h3>Styling and Accessibility</h3>
               <p>
@@ -352,42 +368,7 @@ function App() {
             </div>
           </section>
         </div>
-      </section>  
-
-      <section className="demo-section">
-        <h2>✍️ Live input typing</h2>
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="type-input"
-        />
-        <ReactTypewriter
-          lines={[input]}
-          key={input}
-          typingSpeed={60}
-        />
-      </section>
-
-      <section className="demo-section">
-        <h2>🕒 Real-time clock typing</h2>
-        <ReactTypewriter
-          lines={[`Current Time: ${time}`]}
-          typingSpeed={60}
-          loop={false}
-        />
-      </section>
-
-      <section className="demo-section">
-        <h2>100-line stress test</h2>
-        <ReactTypewriter
-          lines={manyLines}
-          typingSpeed={10}
-          eraseSpeed={5}
-          lineDelay={100}
-          eraseDelay={500}
-          loop
-        />
-      </section>
+      </section>    
 
       <footer className="footer">
         <p>

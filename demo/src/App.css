@@ -106,10 +106,13 @@ h2 {
   justify-content: space-between;
 }
 .variant.-sm {
-  min-height: 180px;
+  min-height: 200px;
 }
 .variant.-md {
   min-height: 250px;
+}
+.variant.-lg {
+  min-height: 370px;
 }
 .variant:hover {
   background-color: #161b22;
