@@ -255,6 +255,27 @@ function App() {
             </div>
           </section>
 
+          <section
+            className="variant -md"
+            style={{ background: '#000', padding: '1rem', borderRadius: '8px' }}>
+            <div>
+              <h3 style={{ color: '#0f0' }}>Terminal-style animation</h3>
+              <ReactTypewriter
+                lines={[
+                  'user@host:~$ echo "ReactTypewriter rocks!"',
+                  'ReactTypewriter rocks!',
+                ]}
+                typingSpeed={40}
+                eraseSpeed={10}
+                lineDelay={800}
+                eraseDelay={5000}
+                loop
+                style={{ color: '#0f0', fontFamily: 'Courier New' }}
+                cursor={<span style={{ color: '#0f0' }}>|</span>}
+              />
+            </div>
+          </section>
+
           <section className="variant -md">
             <div>
               <h3>Pause & Resume Typing</h3>
@@ -311,7 +332,7 @@ function App() {
               {pauseMulti ? 'Resume Multi-line' : 'Pause Multi-line'}
             </button>
           </section>  
-          
+
           <section className="variant">
             <div>
               <h3>Styling and Accessibility</h3>
@@ -365,25 +386,6 @@ function App() {
           lineDelay={100}
           eraseDelay={500}
           loop
-        />
-      </section>
-
-      <section
-        className="demo-section"
-        style={{ background: '#000', padding: '1rem', borderRadius: '8px' }}>
-        <h2 style={{ color: '#0f0' }}>Terminal-style animation</h2>
-        <ReactTypewriter
-          lines={[
-            'user@host:~$ echo "ReactTypewriter rocks!"',
-            'ReactTypewriter rocks!',
-          ]}
-          typingSpeed={40}
-          eraseSpeed={25}
-          lineDelay={800}
-          eraseDelay={2000}
-          loop
-          style={{ color: '#0f0', fontFamily: 'Courier New' }}
-          cursor={<span style={{ color: '#0f0' }}>|</span>}
         />
       </section>
 
