@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from 'react'
 import './App.css'
-import Typewriter from '@bishal-shrestha/react-typewriter'
+import ReactTypewriter from '@bishal-shrestha/react-typewriter'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
@@ -11,7 +11,7 @@ function App() {
   const mainLines = useMemo(() => [
     'Introducing',
     '@bishal-shrestha/react-typewriter',
-    'A customizable React component for elegant typing animations.',
+    'A customisable React component for elegant typing animations.',
     'Powered by TypeScript, built for modern UIs.',
     'Install via npm:',
     'npm i @bishal-shrestha/react-typewriter',
@@ -43,7 +43,7 @@ function App() {
 
   const multiLineLoop = useMemo(() => [
     'Line 1: React is powerful.',
-    'Line 2: Typewriter effects are cool.',
+    'Line 2: React Typewriter effects are cool.',
     'Line 3: This is all animated!',
   ], [])
 
@@ -54,6 +54,11 @@ function App() {
   const pauseLines = useMemo(() => [
     'You can pause and resume typing interactively!'
   ], [])
+
+  const codingLines = useMemo(() => [
+    "const greet = (name) => `Hello, ${name}`;",
+    "console.log(greet('World'));",
+  ], []);
 
   const stylingLines = useMemo(() => [
     'Styled with custom colors.',
@@ -82,8 +87,6 @@ function App() {
 
   const reversedLines = useMemo(() => ['!dlroW ,olleH'], [])
 
-  const manyLines = useMemo(() => Array.from({ length: 100 }, (_, i) => `Stress line ${i + 1}`), [])
-
   const dynamicMessages = useMemo(() => [
     ['First message shown.'],
     ['Now showing the second message!'],
@@ -91,12 +94,13 @@ function App() {
   ], [])
 
   const terminalLines = useMemo(() => [
-    'user@host:~$ echo "Typewriter rocks!"',
-    'Typewriter rocks!',
+    'user@host:~$ echo "React Typewriter rocks!"',
+    'React Typewriter rocks!',
   ], []);
 
+  const currentTimeLine = useMemo(() => [`Current Time: ${time}`], []);
+
   const liveInputLine = useMemo(() => [input], [input]);
-  const clockLine = useMemo(() => [`Current Time: ${time}`], [time]);
   
   useEffect(() => {
     const id = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000)
@@ -119,7 +123,7 @@ function App() {
       </header>
 
       <section className="demo-section main-showcase">
-        <Typewriter
+        <ReactTypewriter
           lines={mainLines}
           typingSpeed={60}
           eraseSpeed={30}
@@ -137,15 +141,39 @@ function App() {
 
           <div className="variant -sm">
             <div>
+              <h3>Code Typing Simulation</h3>
+              <ReactTypewriter
+                lines={codingLines}
+                typingSpeed={40}
+                eraseSpeed={25}
+                lineDelay={700}
+                eraseDelay={2000}
+                loop
+                style={{
+                  backgroundColor: '#1e1e1e',
+                  color: '#d4d4d4',
+                  padding: '1rem',
+                  borderRadius: '6px',
+                  fontFamily: 'Courier New, monospace',
+                  fontSize: '0.9rem',
+                  textAlign: 'left',
+                }}
+                cursor={<span style={{ color: '#00ff00' }}>|</span>}
+              />
+            </div>
+          </div>
+
+          <div className="variant -sm">
+            <div>
               <h3>Default Configuration</h3>
-              <Typewriter lines={defaultLines} />
+              <ReactTypewriter lines={defaultLines} />
             </div>
           </div>
 
           <div className="variant -sm">
             <div>
               <h3>Fast Typing & Erasing</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={fastLines}
                 typingSpeed={20}
                 eraseSpeed={20}
@@ -156,7 +184,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>Custom Cursor Character</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={customCursorChar}
                 cursor=">"
                 typingSpeed={50}
@@ -167,7 +195,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>Custom Cursor React Node</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={customCursorNode}
                 cursor={<span style={{ color: 'cyan' }}>🖋️</span>}
                 typingSpeed={50}
@@ -178,7 +206,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>Hide Cursor</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={hideCursorLines}
                 showCursor={false}
                 typingSpeed={40}
@@ -189,7 +217,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>One-Time Typing (No Loop)</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={oneTimeLines}
                 loop={false}
                 typingSpeed={40}
@@ -201,7 +229,7 @@ function App() {
           <div className="variant -sm" style={{ gridColumn: '1 / -1' }}>
             <div>
               <h3>Multi-line Text with Loop</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={multiLineLoop}
                 typingSpeed={50}
                 lineDelay={600}
@@ -214,7 +242,7 @@ function App() {
           <div className="variant -sm" style={{ gridColumn: '1 / -1' }}>
             <div>
               <h3>Callbacks on Events</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={callbackLines}
                 onLineTyped={(i) => console.log(`Line ${i + 1} typed.`)}
                 onLoopComplete={() => console.log('Typing loop completed.')}
@@ -227,7 +255,7 @@ function App() {
           <section className="variant -sm">
             <div>
               <h3>One character per line</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={oneCharPerLine}
                 typingSpeed={80}
                 lineDelay={300}
@@ -241,7 +269,7 @@ function App() {
           <section className="variant -sm">
             <div>
               <h3>Reverse typing</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={reversedLines}
                 typingSpeed={60}
                 showCursor
@@ -258,13 +286,23 @@ function App() {
                 className="type-input"
               />
             </div>
-            <Typewriter lines={liveInputLine} typingSpeed={60} />
+            <ReactTypewriter lines={liveInputLine} typingSpeed={60} />
+          </section> 
+
+          <section className="variant -sm">
+            <div>
+              <h3>Current Time</h3>
+              <ReactTypewriter lines={currentTimeLine}
+                typingSpeed={60}
+                loop={false} 
+            />
+            </div>
           </section> 
 
           <section className="variant -md">
             <div>
               <h3>Multilingual typing</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={intlLines}
                 typingSpeed={50}
                 eraseSpeed={40}
@@ -279,7 +317,7 @@ function App() {
             style={{ background: '#000', padding: '1rem', borderRadius: '8px' }}>
             <div>
               <h3 style={{ color: '#0f0' }}>Terminal-style animation</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={terminalLines}
                 typingSpeed={40}
                 eraseSpeed={10}
@@ -295,7 +333,7 @@ function App() {
           <section className="variant -md">
             <div>
               <h3>Pause & Resume Typing</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={pauseLines}
                 pause={paused}
                 typingSpeed={60}
@@ -309,7 +347,7 @@ function App() {
           <section className="variant -md">
             <div>
               <h3>Dynamic message switching</h3>
-              <Typewriter
+              <ReactTypewriter
                 lines={dynamicMessages[messageIndex]}
                 typingSpeed={50}
                 eraseSpeed={30}
@@ -334,7 +372,7 @@ function App() {
                 supports pausing, and cleanly loops based on the <code>loop</code> prop.
                 Typing and erasing speeds are adjustable for smooth animations.
               </p>
-              <Typewriter
+              <ReactTypewriter
                 lines={performanceLines}
                 typingSpeed={50}
                 eraseSpeed={40}
@@ -353,10 +391,10 @@ function App() {
             <div>
               <h3>Styling and Accessibility</h3>
               <p>
-                You can customize the style, className, and provide any React node as cursor.
+                You can customise the style, className, and provide any React node as cursor.
                 The component uses <code>aria-live="polite"</code> and <code>aria-atomic="true"</code> for accessibility.
               </p>
-              <Typewriter
+              <ReactTypewriter
                 lines={stylingLines}
                 typingSpeed={45}
                 eraseSpeed={25}

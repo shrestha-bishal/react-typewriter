@@ -3,7 +3,7 @@
 var jsxRuntime = require('react/jsx-runtime');
 var react = require('react');
 
-function Typewriter({ lines, typingSpeed = 50, lineDelay = 500, eraseSpeed = 30, eraseDelay = 1000, loop = true, showCursor = true, cursor = '|', className, style, pause = false, onLineTyped, onLoopComplete, }) {
+function ReactTypewriter({ lines, typingSpeed = 50, lineDelay = 500, eraseSpeed = 30, eraseDelay = 1000, loop = true, showCursor = true, cursor = '|', className, style, pause = false, onLineTyped, onLoopComplete, }) {
     const timeoutRef = react.useRef(null);
     const [displayedLines, setDisplayedLines] = react.useState([]);
     const [currentLine, setCurrentLine] = react.useState('');
@@ -160,5 +160,5 @@ function Typewriter({ lines, typingSpeed = 50, lineDelay = 500, eraseSpeed = 30,
       ` })] }));
 }
 
-module.exports = Typewriter;
+module.exports = ReactTypewriter;
 //# sourceMappingURL=index.js.map

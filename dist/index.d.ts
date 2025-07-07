@@ -1,5 +1,5 @@
 import React from 'react';
-export interface TypewriterProps {
+export interface ReactTypewriterProps {
     lines: string[];
     typingSpeed?: number;
     lineDelay?: number;
@@ -14,4 +14,4 @@ export interface TypewriterProps {
     onLineTyped?: (lineIndex: number) => void;
     onLoopComplete?: () => void;
 }
-export default function Typewriter({ lines, typingSpeed, lineDelay, eraseSpeed, eraseDelay, loop, showCursor, cursor, className, style, pause, onLineTyped, onLoopComplete, }: TypewriterProps): import("react/jsx-runtime").JSX.Element;
+export default function ReactTypewriter({ lines, typingSpeed, lineDelay, eraseSpeed, eraseDelay, loop, showCursor, cursor, className, style, pause, onLineTyped, onLoopComplete, }: ReactTypewriterProps): import("react/jsx-runtime").JSX.Element;

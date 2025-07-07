@@ -1,7 +1,7 @@
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useRef, useState, useEffect } from 'react';
 
-function Typewriter({ lines, typingSpeed = 50, lineDelay = 500, eraseSpeed = 30, eraseDelay = 1000, loop = true, showCursor = true, cursor = '|', className, style, pause = false, onLineTyped, onLoopComplete, }) {
+function ReactTypewriter({ lines, typingSpeed = 50, lineDelay = 500, eraseSpeed = 30, eraseDelay = 1000, loop = true, showCursor = true, cursor = '|', className, style, pause = false, onLineTyped, onLoopComplete, }) {
     const timeoutRef = useRef(null);
     const [displayedLines, setDisplayedLines] = useState([]);
     const [currentLine, setCurrentLine] = useState('');
@@ -158,5 +158,5 @@ function Typewriter({ lines, typingSpeed = 50, lineDelay = 500, eraseSpeed = 30,
       ` })] }));
 }
 
-export { Typewriter as default };
+export { ReactTypewriter as default };
 //# sourceMappingURL=index.esm.js.map
