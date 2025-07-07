@@ -1,9 +1,6 @@
 # React Typewriter
 A customizable and lightweight React component that simulates a typewriter effect for a list of text lines. Supports typing, line-by-line animation, erasing, looping, and cursor styling.
 
-## Demo
-https://react-typewriter-docs.netlify.app/
-
 [View Package in npm](https://www.npmjs.com/package/@bishal-shrestha/react-typewriter)
 
 [View Website](https://react-typewriter-docs.netlify.app/)
@@ -62,6 +59,9 @@ App()
 | `onLineTyped`    | `(lineIndex: number) => void`    | `undefined` | Callback fired when a line is completely typed                              |
 | `onLoopComplete` | `() => void`                     | `undefined` | Callback fired after a full cycle when `loop` is enabled                    |
 
+## Demo
+[Demo Website](https://react-typewriter-docs.netlify.app/) https://react-typewriter-docs.netlify.app/
+![ViteReactTS-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/5f0b4554-c911-4496-9c44-9e1b22d0dce4)
 
 ## Funding & Sponsorship
 `@bishal-shrestha/react-typewriter` is an open-source project maintained with care, if you like to support the project please support me through the following:
