@@ -4,6 +4,10 @@ A customizable and lightweight React component that simulates a typewriter effec
 ## Demo
 https://react-typewriter-docs.netlify.app/
 
+[View Package in npm](https://www.npmjs.com/package/@bishal-shrestha/react-typewriter)
+
+[View Website](https://react-typewriter-docs.netlify.app/)
+
 ## Features
 - Typewriter animation per character
 - Multi-line support
@@ -58,3 +62,22 @@ App()
 | `onLineTyped`    | `(lineIndex: number) => void`    | `undefined` | Callback fired when a line is completely typed                              |
 | `onLoopComplete` | `() => void`                     | `undefined` | Callback fired after a full cycle when `loop` is enabled                    |
 
+
+## Funding & Sponsorship
+`@bishal-shrestha/react-typewriter` is an open-source project maintained with care, if you like to support the project please support me through the following:
+
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Become%20a%20Sponsor-blueviolet?logo=githubsponsors&style=flat-square)](https://github.com/sponsors/shrestha-bishal)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20Developer-yellow?logo=buymeacoffee&style=flat-square)](https://www.buymeacoffee.com/shresthabishal)
+[![Thanks.dev](https://img.shields.io/badge/Thanks.dev-Appreciate%20Open%20Source-29abe0?logo=github&style=flat-square)](https://thanks.dev/gh/shrestha-bishal)
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+## Author
+Bishal Shrestha 
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/shrestha-bishal)
+[![Repo](https://img.shields.io/badge/Repository-GitHub-black?logo=github)](https://github.com/shrestha-bishal/react-typewriter)
+[Website](https://react-typewriter-docs.netlify.app)
+
+© 2025 Bishal Shrestha, All rights reserved
