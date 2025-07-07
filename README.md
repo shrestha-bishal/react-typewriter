@@ -62,6 +62,7 @@ App()
 ## Demo
 [Demo Website](https://react-typewriter-docs.netlify.app/) https://react-typewriter-docs.netlify.app/
 ![ViteReactTS-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/5f0b4554-c911-4496-9c44-9e1b22d0dce4)
+![2](https://github.com/user-attachments/assets/b05f66a7-7ba0-4368-ae26-93f95fe0e1f7)
 
 ## Funding & Sponsorship
 `@bishal-shrestha/react-typewriter` is an open-source project maintained with care, if you like to support the project please support me through the following:
