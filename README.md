@@ -38,6 +38,8 @@ function App() {
     />
   );
 }
+
+App()
 ```
 ## Props
 | Prop             | Type                            | Default     | Description                                                                 |
@@ -49,7 +51,7 @@ function App() {
 | `eraseDelay`     | `number`                         | `1000`      | Delay before starting to erase (in ms)                                      |
 | `loop`           | `boolean`                        | `true`      | Whether to erase and restart after finishing all lines                      |
 | `showCursor`     | `boolean`                        | `true`      | Whether to display the blinking cursor                                      |
-| `cursor`         | `string \| React.ReactNode`      | `"|"`       | The cursor character or a custom React node                                 |
+| `cursor`         | `string &#124; React.ReactNode` | `"&#124;"` | The cursor character or a custom React node |
 | `className`      | `string`                         | `undefined` | Optional CSS class for the container                                        |
 | `style`          | `React.CSSProperties`            | `undefined` | Optional inline styles for the container                                    |
 | `pause`          | `boolean`                        | `false`     | Temporarily pauses typing or erasing                                        |
