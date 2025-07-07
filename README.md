@@ -66,6 +66,36 @@ App()
 ![2](https://github.com/user-attachments/assets/4bb3ce8a-ba7c-4ef4-86c7-dc11b9d6e1dd)
 ![3](https://github.com/user-attachments/assets/cbf209ae-8cc6-45db-8de2-dec509d9c341)
 
+#### Minimal Example with Styles
+```tsx
+<ReactTypewriter
+  lines={['Fast. Lightweight. React Typewriter.']}
+  typingSpeed={60}
+  className="my-typewriter"
+/>
+
+<style>
+.my-typewriter {
+  font-family: monospace;
+  font-size: 1.25rem;
+  color: #00ff99;
+}
+</style>
+```
+
+#### How to Pause/Resume
+```tsx
+const [paused, setPaused] = useState(false);
+
+<ReactTypewriter
+  lines={['Typing will pause... and resume!']}
+  pause={paused}
+/>
+<button onClick={() => setPaused(p => !p)}>
+  {paused ? 'Resume' : 'Pause'}
+</button>
+```
+
 ## Funding & Sponsorship
 `@bishal-shrestha/react-typewriter` is an open-source project maintained with care, if you like to support the project please support me through the following:
 

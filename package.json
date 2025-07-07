@@ -2,6 +2,14 @@
   "name": "@bishal-shrestha/react-typewriter",
   "version": "1.0.0",
   "description": "A flexible and scalable React component for typing effect with multi-line support",
+  "author": {
+    "name": "Bishal Shrestha",
+    "url": "https://github.com/shrestha-bishal"
+  },
+  "bugs": {
+    "url": "https://github.com/shrestha-bishal/react-typewriter/issues"
+  },
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -9,17 +17,12 @@
     "build": "rollup -c",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },  
+  "homepage": "https://react-typewriter-docs.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrestha-bishal/react-typewriter.git"
   },
-  "keywords": [
-    "react",
-    "react-typewriter",
-    "typing-effect"
-  ],
-  "author": {
-    "name": "Bishal Shrestha",
-    "url": "https://github.com/shrestha-bishal"
-  },
-  "homepage": "https://github.com/shrestha-bishal/react-typewriter/",
   "funding": [
     {
       "type": "github",
@@ -34,12 +37,12 @@
       "url": "https://thanks.dev/gh/shrestha-bishal"
     }
   ], 
+  "sideEffects": false,
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
-  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
@@ -53,5 +56,37 @@
     "rollup": "^3.0.0",
     "rollup-plugin-typescript2": "^0.31.2",
     "typescript": "^5.0.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-typewriter",
+    "typewriter",
+    "typewriter-effect",
+    "react-typing",
+    "typing-effect",
+    "typing-animation",
+    "animated-text",
+    "text-animation",
+    "react-animated-text",
+    "react-text-effects",
+    "react-text-animation",
+    "react-ui",
+    "react-ui-components",
+    "text-effects",
+    "react-fx",
+    "react-looping-text",
+    "typewriter-react",
+    "react-typist",
+    "text-typing",
+    "animated-typewriter",
+    "auto-typing",
+    "react-auto-typing",
+    "text-animation-react",
+    "react-type-effect",
+    "react-text-display",
+    "typewriter-component",
+    "looping-text",
+    "react-typing-component"
+  ]
 }
