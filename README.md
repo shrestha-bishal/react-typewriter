@@ -77,7 +77,9 @@ This project is licensed under the [MIT License](./LICENSE).
 ## Author
 Bishal Shrestha 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/shrestha-bishal)
+
 [![Repo](https://img.shields.io/badge/Repository-GitHub-black?logo=github)](https://github.com/shrestha-bishal/react-typewriter)
+
 [Website](https://react-typewriter-docs.netlify.app)
 
 © 2025 Bishal Shrestha, All rights reserved
