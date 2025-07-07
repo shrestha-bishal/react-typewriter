@@ -62,7 +62,7 @@ App()
 ## Demo
 [Demo Website](https://react-typewriter-docs.netlify.app/) https://react-typewriter-docs.netlify.app/
 ![1](https://github.com/user-attachments/assets/8193f092-e0ff-41df-b941-dc8cc45f91ac)
-
+![2](https://github.com/user-attachments/assets/4bb3ce8a-ba7c-4ef4-86c7-dc11b9d6e1dd)
 
 ## Funding & Sponsorship
 `@bishal-shrestha/react-typewriter` is an open-source project maintained with care, if you like to support the project please support me through the following:
