@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from 'react'
 import './App.css'
-import ReactTypewriter from '@bishal-shrestha/react-typewriter'
+import Typewriter from '@bishal-shrestha/react-typewriter'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
@@ -91,8 +91,8 @@ function App() {
   ], [])
 
   const terminalLines = useMemo(() => [
-    'user@host:~$ echo "ReactTypewriter rocks!"',
-    'ReactTypewriter rocks!',
+    'user@host:~$ echo "Typewriter rocks!"',
+    'Typewriter rocks!',
   ], []);
 
   const liveInputLine = useMemo(() => [input], [input]);
@@ -119,7 +119,7 @@ function App() {
       </header>
 
       <section className="demo-section main-showcase">
-        <ReactTypewriter
+        <Typewriter
           lines={mainLines}
           typingSpeed={60}
           eraseSpeed={30}
@@ -138,14 +138,14 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>Default Configuration</h3>
-              <ReactTypewriter lines={defaultLines} />
+              <Typewriter lines={defaultLines} />
             </div>
           </div>
 
           <div className="variant -sm">
             <div>
               <h3>Fast Typing & Erasing</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={fastLines}
                 typingSpeed={20}
                 eraseSpeed={20}
@@ -156,7 +156,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>Custom Cursor Character</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={customCursorChar}
                 cursor=">"
                 typingSpeed={50}
@@ -167,7 +167,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>Custom Cursor React Node</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={customCursorNode}
                 cursor={<span style={{ color: 'cyan' }}>🖋️</span>}
                 typingSpeed={50}
@@ -178,7 +178,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>Hide Cursor</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={hideCursorLines}
                 showCursor={false}
                 typingSpeed={40}
@@ -189,7 +189,7 @@ function App() {
           <div className="variant -sm">
             <div>
               <h3>One-Time Typing (No Loop)</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={oneTimeLines}
                 loop={false}
                 typingSpeed={40}
@@ -201,7 +201,7 @@ function App() {
           <div className="variant -sm" style={{ gridColumn: '1 / -1' }}>
             <div>
               <h3>Multi-line Text with Loop</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={multiLineLoop}
                 typingSpeed={50}
                 lineDelay={600}
@@ -214,7 +214,7 @@ function App() {
           <div className="variant -sm" style={{ gridColumn: '1 / -1' }}>
             <div>
               <h3>Callbacks on Events</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={callbackLines}
                 onLineTyped={(i) => console.log(`Line ${i + 1} typed.`)}
                 onLoopComplete={() => console.log('Typing loop completed.')}
@@ -227,7 +227,7 @@ function App() {
           <section className="variant -sm">
             <div>
               <h3>One character per line</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={oneCharPerLine}
                 typingSpeed={80}
                 lineDelay={300}
@@ -241,7 +241,7 @@ function App() {
           <section className="variant -sm">
             <div>
               <h3>Reverse typing</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={reversedLines}
                 typingSpeed={60}
                 showCursor
@@ -258,13 +258,13 @@ function App() {
                 className="type-input"
               />
             </div>
-            <ReactTypewriter lines={liveInputLine} typingSpeed={60} />
+            <Typewriter lines={liveInputLine} typingSpeed={60} />
           </section> 
 
           <section className="variant -md">
             <div>
               <h3>Multilingual typing</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={intlLines}
                 typingSpeed={50}
                 eraseSpeed={40}
@@ -279,7 +279,7 @@ function App() {
             style={{ background: '#000', padding: '1rem', borderRadius: '8px' }}>
             <div>
               <h3 style={{ color: '#0f0' }}>Terminal-style animation</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={terminalLines}
                 typingSpeed={40}
                 eraseSpeed={10}
@@ -295,7 +295,7 @@ function App() {
           <section className="variant -md">
             <div>
               <h3>Pause & Resume Typing</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={pauseLines}
                 pause={paused}
                 typingSpeed={60}
@@ -309,7 +309,7 @@ function App() {
           <section className="variant -md">
             <div>
               <h3>Dynamic message switching</h3>
-              <ReactTypewriter
+              <Typewriter
                 lines={dynamicMessages[messageIndex]}
                 typingSpeed={50}
                 eraseSpeed={30}
@@ -334,7 +334,7 @@ function App() {
                 supports pausing, and cleanly loops based on the <code>loop</code> prop.
                 Typing and erasing speeds are adjustable for smooth animations.
               </p>
-              <ReactTypewriter
+              <Typewriter
                 lines={performanceLines}
                 typingSpeed={50}
                 eraseSpeed={40}
@@ -356,7 +356,7 @@ function App() {
                 You can customize the style, className, and provide any React node as cursor.
                 The component uses <code>aria-live="polite"</code> and <code>aria-atomic="true"</code> for accessibility.
               </p>
-              <ReactTypewriter
+              <Typewriter
                 lines={stylingLines}
                 typingSpeed={45}
                 eraseSpeed={25}

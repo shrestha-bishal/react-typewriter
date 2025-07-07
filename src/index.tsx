@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-export interface ReactTypewriterProps {
+export interface TypewriterProps {
   lines: string[];
   typingSpeed?: number;   // ms per character typing
   lineDelay?: number;     // ms delay between lines typed
@@ -16,7 +16,7 @@ export interface ReactTypewriterProps {
   onLoopComplete?: () => void;
 }
 
-export default function ReactTypewriter({
+export default function Typewriter({
   lines,
   typingSpeed = 50,
   lineDelay = 500,
@@ -30,7 +30,7 @@ export default function ReactTypewriter({
   pause = false,
   onLineTyped,
   onLoopComplete,
-}: ReactTypewriterProps) {
+}: TypewriterProps) {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [currentLine, setCurrentLine] = useState('');
