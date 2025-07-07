@@ -1,4 +1,5 @@
-# React Typewriter
+# React Typewriter ![logo](https://github.com/user-attachments/assets/bffc5afa-7adb-4aa4-91b8-3dd427595760)
+
 A customizable and lightweight React component that simulates a typewriter effect for a list of text lines. Supports typing, line-by-line animation, erasing, looping, and cursor styling.
 
 [View Package in npm](https://www.npmjs.com/package/@bishal-shrestha/react-typewriter)
